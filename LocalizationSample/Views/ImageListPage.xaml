@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LocalizationSample.Views.ImageListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mvvm="clr-namespace:LocalizationSample.Mvvm"
+    xmlns:converters="clr-namespace:LocalizationSample.Converters"
+    xmlns:viewModels="clr-namespace:LocalizationSample.ViewModels">
+    <ContentPage.BindingContext>
+        <viewModels:ImageListViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
+        <converters:ItemTappedEventArgsToItemTappedConverter x:Key="ItemTappedConverter"/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ListView
+            ItemsSource="{Binding AllColors}">
+            <ListView.Behaviors>
+                <mvvm:EventToCommandBehavior
+                    EventName="ItemSelected"
+                    Command="{Binding SelectedItemCommand}" 
+                    Converter="{StaticResource SelectedItemConverter}"/>
+                <mvvm:EventToCommandBehavior
+                    EventName="ItemTapped"
+                    Command="{Binding TappedItemCommand}"
+                    Converter="{StaticResource ItemTappedConverter}"/>
+            </ListView.Behaviors>
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell
+                        Text="{Binding DisplayName}"
+                        Detail="{Binding HexCode}"
+                        ImageSource="{Binding Icon}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

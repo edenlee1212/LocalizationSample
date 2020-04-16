@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Xamarin.Forms Shell is a container to reduce the complexity of application development.
+    It is recommended to create a Shell application for navigation and performance improvements.
+    For more information about Shell, see https://developer.samsung.com/tizen/blog/en-us/2020/03/09/using-xamarinform-shell-on-galaxy-watch
+-->
+<Shell
+    x:Class="LocalizationSample.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ext="clr-namespace:LocalizationSample.Extensions"
+    xmlns:views="clr-namespace:LocalizationSample.Views">
+    <FlyoutItem Route="CenterLayout" Title="{ext:LocalizedResource CenterLayoutPageTitle}">
+        <ShellSection>
+            <ShellContent ContentTemplate="{DataTemplate views:CenterLayoutPage}"/>
+        </ShellSection>
+    </FlyoutItem>
+    <FlyoutItem Route="ImageList" Title="{ext:LocalizedResource ImageListPageTitle}">
+        <ShellSection>
+            <ShellContent ContentTemplate="{DataTemplate views:ImageListPage}"/>
+        </ShellSection>
+    </FlyoutItem>
+</Shell>
