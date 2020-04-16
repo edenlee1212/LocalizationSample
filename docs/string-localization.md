@@ -111,5 +111,6 @@ Accessing the value of text by **LocalizedResourceExtension** enables a localize
 
 ## Sample application demo
 You can see that the text on the page is changed to the localized text when current UI culture has been changed.
+![LocalizationDemo](https://user-images.githubusercontent.com/1029182/79408518-820f6f80-7fd6-11ea-88b4-6f9dd6db60d1.gif)
 
 
