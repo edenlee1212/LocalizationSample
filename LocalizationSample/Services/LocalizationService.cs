@@ -80,7 +80,7 @@ namespace LocalizationSample.Services
 
         private void UpdateCulture()
         {
-            Culture = CultureInfo.CurrentCulture;
+            Culture = new CultureInfo(SystemSettings.LocaleCountry.Replace('_', '-'));
             Logger.Info($"CurrentCulture: {Culture?.ToString()}");
             
             OnPropertyChanged(nameof(Culture));
