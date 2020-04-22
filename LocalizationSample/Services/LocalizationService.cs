@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Globalization;
 using Tizen.Applications;
 using Tizen.System;
+using LocalizedResources = LocalizationSample.Resources;
 
 namespace LocalizationSample.Services
 {
@@ -64,7 +65,7 @@ namespace LocalizationSample.Services
         /// </returns>
         public string GetResource(string name)
         {
-            return Resources.Resources.ResourceManager.GetString(name, UICulture) ?? name;
+            return LocalizedResources.Resources.ResourceManager.GetString(name, UICulture) ?? name;
         }
 
         private void UpdateUICulture()

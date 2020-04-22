@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Windows.Input;
 
 using Xamarin.Forms;
+using LocalizedResources = LocalizationSample.Resources;
 
 namespace LocalizationSample.Mvvm
 {
@@ -66,7 +67,7 @@ namespace LocalizationSample.Mvvm
             EventInfo eventInfo = AssociatedObject.GetType().GetRuntimeEvent(name);
             if (eventInfo == null)
             {
-                throw new ArgumentException(Resources.Resources.ExceptionEventNotRegister);
+                throw new ArgumentException(LocalizedResources.Resources.ExceptionEventNotRegister);
             }
             MethodInfo methodInfo = typeof(EventToCommandBehavior).GetTypeInfo().GetDeclaredMethod("OnEvent");
             eventHandler = methodInfo.CreateDelegate(eventInfo.EventHandlerType, this);
@@ -87,7 +88,7 @@ namespace LocalizationSample.Mvvm
             EventInfo eventInfo = AssociatedObject.GetType().GetRuntimeEvent(name);
             if (eventInfo == null)
             {
-                throw new ArgumentException(Resources.Resources.ExceptionEventNotUnregister);
+                throw new ArgumentException(LocalizedResources.Resources.ExceptionEventNotUnregister);
             }
             eventInfo.RemoveEventHandler(AssociatedObject, eventHandler);
             eventHandler = null;
