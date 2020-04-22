@@ -66,7 +66,7 @@ namespace LocalizationSample.Mvvm
             EventInfo eventInfo = AssociatedObject.GetType().GetRuntimeEvent(name);
             if (eventInfo == null)
             {
-                throw new ArgumentException(Strings.Resources.ExceptionEventNotRegister);
+                throw new ArgumentException(Resources.Resources.ExceptionEventNotRegister);
             }
             MethodInfo methodInfo = typeof(EventToCommandBehavior).GetTypeInfo().GetDeclaredMethod("OnEvent");
             eventHandler = methodInfo.CreateDelegate(eventInfo.EventHandlerType, this);
@@ -87,7 +87,7 @@ namespace LocalizationSample.Mvvm
             EventInfo eventInfo = AssociatedObject.GetType().GetRuntimeEvent(name);
             if (eventInfo == null)
             {
-                throw new ArgumentException(Strings.Resources.ExceptionEventNotUnregister);
+                throw new ArgumentException(Resources.Resources.ExceptionEventNotUnregister);
             }
             eventInfo.RemoveEventHandler(AssociatedObject, eventHandler);
             eventHandler = null;
