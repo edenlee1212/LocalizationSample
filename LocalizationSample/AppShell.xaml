@@ -10,12 +10,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ext="clr-namespace:LocalizationSample.Extensions"
     xmlns:views="clr-namespace:LocalizationSample.Views">
-    <FlyoutItem Route="CenterLayout" Title="{ext:LocalizedResource CenterLayoutPageTitle}">
+    <FlyoutItem Route="CenterLayout" Title="{ext:Localizing CenterLayoutPageTitle}">
         <ShellSection>
             <ShellContent ContentTemplate="{DataTemplate views:CenterLayoutPage}"/>
         </ShellSection>
     </FlyoutItem>
-    <FlyoutItem Route="ImageList" Title="{ext:LocalizedResource ImageListPageTitle}">
+    <FlyoutItem Route="ImageList" Title="{ext:Localizing ImageListPageTitle}">
         <ShellSection>
             <ShellContent ContentTemplate="{DataTemplate views:ImageListPage}"/>
         </ShellSection>

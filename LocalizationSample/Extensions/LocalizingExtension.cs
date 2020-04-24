@@ -15,7 +15,7 @@ namespace LocalizationSample.Extensions
     /// For more details, see https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/localization/text?pivots=windows#create-resx-files.
     /// </summary>
     [ContentProperty("Name")]
-    public class LocalizedResourceExtension : IMarkupExtension<BindingBase>
+    public class LocalizingExtension : IMarkupExtension<BindingBase>
     {
         private static readonly IValueConverter _converter = new LocalizedResourceConverter();
 

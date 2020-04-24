@@ -12,7 +12,7 @@
     <ContentPage.Content>
         <StackLayout Margin="0, 40, 0, 30" VerticalOptions="CenterAndExpand">
             <Label
-                Text="{ext:LocalizedResource CountryName}"
+                Text="{ext:Localizing CountryName}"
                 HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>

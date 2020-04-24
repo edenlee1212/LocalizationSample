@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Globalization;
 using Tizen.Applications;
 using Tizen.System;
-using LocalizedResources = LocalizationSample.Resources;
+using LocalizationSample.Resources;
 
 namespace LocalizationSample.Services
 {
@@ -59,14 +59,16 @@ namespace LocalizationSample.Services
         /// <summary>
         /// Get the value of localized resource.
         /// </summary>
-        /// <param name="name">Resource name</param>
+        /// <param name="resourceName">Resource name</param>
         /// <returns>
-        /// The value of localized resource. If name is not found in all resource files, then name is returned.
+        /// The value of localized resource.
+        /// If resourceName is not defined as a name in any resource file, then resourceName is returned as the value of the resource.
         /// </returns>
-        public string GetResource(string name)
+        public string GetResource(string resourceName)
         {
-            return LocalizedResources.Resources.ResourceManager.GetString(name, UICulture) ?? name;
+            return AppResources.ResourceManager.GetString(resourceName, UICulture) ?? resourceName;
         }
+
 
         private void UpdateUICulture()
         {          
