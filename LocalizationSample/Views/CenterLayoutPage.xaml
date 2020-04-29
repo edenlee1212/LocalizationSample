@@ -11,6 +11,7 @@
 
     <ContentPage.Content>
         <StackLayout Margin="0, 40, 0, 30" VerticalOptions="CenterAndExpand">
+            <Image Source="{ext:Localizing Flag.png}" />
             <Label
                 Text="{ext:Localizing CountryName}"
                 HorizontalOptions="CenterAndExpand"/>
